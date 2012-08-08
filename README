@@ -1,0 +1,14 @@
+pgRouting returns the edges as they are stored in the database and not 
+as traversed, so on some edges the direction (from-to or to-from) needs 
+to be flipped around.
+
+This script returns all segments in the correct direction.
+
+A note about line 59: this script assumes that pgRouting returns the 
+segments in the correct order, which means that either the condition 
+from line 50 or from line 52 evaluates to true. So, line 59 should 
+never be executed. However, some people have reported on the 
+pgrouting-users mailing list that the segments returned from 
+pgRouting are not in the right order — in which case you would see 
+the message from line 59.
+
